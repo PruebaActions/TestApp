@@ -7,7 +7,7 @@ on:
 
 jobs:
   pr-pipeline:
-    uses: PruebaActions/WorkFlows-Templates/.github/workflows/pr-dotnet-codeql.yml@main
+    uses: PruebaActions/WorkFlows-Templates/.github/workflows/pr-dotnet-codeql.yaml@main
     with:
       dotnet_version: '8.0.x'
       project_paths: '["ActionsSetUp/ActionsSetUp.csproj"]'
