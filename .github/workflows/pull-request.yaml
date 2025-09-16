@@ -1,0 +1,14 @@
+name: Pull Request Pipeline
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  pr-pipeline:
+    uses: org/WorkFlows-Templates/.github/workflows/pr-dotnet-codeql.yml@main
+    with:
+      dotnet_version: '8.0.x'
+      project_paths: '["ActionsSetUp/ActionsSetUp.csproj"]'
+      codeql_languages: 'csharp'
