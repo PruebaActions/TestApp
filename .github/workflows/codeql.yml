@@ -1,0 +1,25 @@
+# .github/workflows/codeql.yml
+name: Weekly Security Audit
+on:
+  schedule:
+    - cron: '0 2 * * 0'  # Sunday 2 AM
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  comprehensive-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: csharp
+          # More comprehensive analysis for scheduled runs
+          config-file: .github/codeql/comprehensive-config.yml
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
