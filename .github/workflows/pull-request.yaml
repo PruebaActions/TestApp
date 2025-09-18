@@ -8,7 +8,7 @@ permissions:
   actions: read
   contents: read
   security-events: write
-  
+  #Esto es una prueba.
 jobs:
   pr-pipeline:
     uses: PruebaActions/WorkFlows-Templates/.github/workflows/pr-dotnet-codeql.yaml@main
