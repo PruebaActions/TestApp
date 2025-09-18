@@ -9,6 +9,8 @@ jobs:
   pr-pipeline:
     uses: PruebaActions/WorkFlows-Templates/.github/workflows/pr-dotnet-codeql.yaml@main
     with:
-      dotnet_version: '8.0.x'
-      project_paths: '["ActionsSetUp/ActionsSetUp.csproj"]'
+      image_name: myapp-pr
+      container_name: myapp-pr-container
+      dockerfile: ./Dockerfile
+      port: '8080'
       codeql_languages: 'csharp'
