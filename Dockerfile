@@ -1,6 +1,7 @@
 # Fase de construcción
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
+
 #fix
 COPY ActionsSetUp/*.csproj ./
 RUN dotnet restore
