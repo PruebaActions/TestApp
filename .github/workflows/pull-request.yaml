@@ -8,6 +8,7 @@ permissions:
   actions: read
   contents: read
   security-events: write
+  issues: write
   #Esto es una prueba.
 jobs:
   pr-pipeline:
