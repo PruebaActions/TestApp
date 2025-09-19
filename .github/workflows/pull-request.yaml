@@ -15,6 +15,6 @@ jobs:
     with:
       image_name: myapp-pr
       container_name: myapp-pr-container
-      dockerfile: ./Dockerfile
+      dockerfile: ActionsSetUp/Dockerfile
       port: '8080'
       codeql_languages: 'csharp'
